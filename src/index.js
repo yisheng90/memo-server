@@ -1,14 +1,24 @@
-import 'dotenv'
+import 'dotenv/config'
+import bodyParser from 'body-parser'
 import cors from 'cors'
 import express from 'express'
 
-const app = express()
-const PORT = process.env.PORT || 9000
+import {connectDb} from "./models";
 
-app.use(cors())
+import ideaRouter from './routes/idea_router'
 
-app.get('/', (req, res) => res.send('Hello World!!!'))
 
-app.listen(PORT, () =>
-  console.log(`Hello. You are listening on port ${PORT} 🚀`)
-)
+const app = express();
+const PORT = process.env.PORT || 9000;
+
+app.use(cors());
+app.use(bodyParser.urlencoded({extended: false}))
+
+app.get('/', (req, res) => res.redirect('/ideas'));
+
+app.use('/ideas', ideaRouter);
+
+
+connectDb().then(async () => {
+    app.listen(PORT, () => console.log(`Hello. You are listening on port ${PORT} 🚀`))
+});
