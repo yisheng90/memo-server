@@ -1,6 +1,10 @@
 import express from 'express'
 
-import { showIdea, updateIdeas, deleteIdea } from '../controllers/idea_controller'
+import {
+	showIdea,
+	updateIdeas,
+	deleteIdea,
+} from '../controllers/idea_controller'
 
 const router = express.Router({ mergeParams: true })
 

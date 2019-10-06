@@ -1,5 +1,8 @@
 import Idea from '../models/idea'
-import { getFormattedIdeaResponse, getFormattedIdeaCreatedRespose } from '../helpers/idea_helpers'
+import {
+	getFormattedIdeaResponse,
+	getFormattedIdeaCreatedRespose,
+} from '../helpers/idea_helpers'
 
 export const allIdeas = async (req, res) => {
 	try {
@@ -21,7 +24,6 @@ export const showIdea = async (req, res) => {
 		}
 
 		res.status(404).json({ error: 'Not Found' })
-
 	} catch (error) {
 		res.status(400).json({ error })
 	}
@@ -35,7 +37,6 @@ export const createIdeas = async (req, res) => {
 		})
 
 		res.status(200).json(getFormattedIdeaCreatedRespose(idea))
-
 	} catch (err) {
 		res.status(500).json(err)
 	}
@@ -43,10 +44,13 @@ export const createIdeas = async (req, res) => {
 
 export const updateIdeas = async (req, res) => {
 	try {
-		const idea = await Idea.findOneAndUpdate({ _id: req.params.id }, {
-			title: req.body.title,
-			body: req.body.body,
-		})
+		await Idea.findOneAndUpdate(
+			{ _id: req.params.id },
+			{
+				title: req.body.title,
+				body: req.body.body,
+			}
+		)
 
 		return res.status(200).json({ success: true })
 	} catch (err) {
@@ -64,7 +68,6 @@ export const deleteIdea = async (req, res) => {
 		}
 
 		res.status(404).json({ error: 'Not Found' })
-
 	} catch (err) {
 		res.status(500).json(err)
 	}

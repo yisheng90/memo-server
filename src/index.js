@@ -20,5 +20,7 @@ app.use('/ideas', ideasRouter)
 app.use('/idea', ideaRouter)
 
 connectDb().then(async () => {
-	app.listen(PORT, () => console.log(`Hello. You are listening on port ${PORT} 🚀`))
+	app.listen(PORT, () =>
+		console.log(`Hello. You are listening on port ${PORT} 🚀`)
+	)
 })

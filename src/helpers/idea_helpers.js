@@ -5,7 +5,7 @@ export const getFormattedIdeaResponse = ({ _id, createdAt, title, body }) => ({
 	body,
 })
 
-export const getFormattedIdeaCreatedRespose = ({ _id, createdAt}) => ({
+export const getFormattedIdeaCreatedRespose = ({ _id, createdAt }) => ({
 	id: _id,
 	created_date: createdAt,
 })

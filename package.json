@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "./node_modules/.bin/eslint \"**/*.js\"",
     "lint:fix": "./node_modules/.bin/eslint \"**/*.js\" --fix",
     "format": "prettier --write \"**/*.js\""
@@ -26,6 +26,7 @@
     "@babel/preset-env": "^7.6.2",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.3.0",
+    "jest": "^24.9.0",
     "nodemon": "^1.19.3",
     "pre-commit": "^1.2.2",
     "prettier": "1.18.2"
