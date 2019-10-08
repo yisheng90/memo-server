@@ -21,9 +21,6 @@
   },
   "homepage": "https://github.com/yisheng90/memo-server#readme",
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/node": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.3.0",
     "jest": "^24.9.0",
@@ -35,6 +32,9 @@
     "lint:fix"
   ],
   "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
