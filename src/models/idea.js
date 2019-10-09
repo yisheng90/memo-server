@@ -14,11 +14,7 @@ const ideaSchema = new mongoose.Schema({
 		type: String,
 		maxlength: [140, 'Body must be less than 140 characters.'],
 	},
-	createdAt: {
-		type: Date,
-		default: new Date(),
-	},
-})
+}, {timestamps: { createdAt: true}})
 
 const Idea = mongoose.model('Idea', ideaSchema)
 
